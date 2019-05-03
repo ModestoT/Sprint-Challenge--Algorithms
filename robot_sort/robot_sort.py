@@ -98,6 +98,13 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+        # Check if robot is able to move right or not
+        # grab the item in the current spot 
+        # move right and compare the item to the right with the item in the robots hand
+        # if the item in the robots hand is greater that the item in front of the robot
+        # swap the items
+        # else if the item is less than the item in front of the robot move left until it cant anymore
+        # then repeat the checking of the right item compared to the item being held 
         while self.can_move_right():
             self.swap_item()
             self.move_right()
@@ -130,7 +137,7 @@ class SortingRobot:
                 self.swap_item()
                 if self.compare_item() == None and self.can_move_right() is not True:
                     self.swap_item()
-                    
+
                 break
        
         
