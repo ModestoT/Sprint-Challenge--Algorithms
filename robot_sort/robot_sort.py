@@ -105,15 +105,15 @@ class SortingRobot:
           if self.compare_item() == None:
             self.swap_item
             print('swaped none item', self._item, self._list[self._position])
-          elif self.compare_item() == 1:
+          elif self.compare_item() == -1:
             print('item held is greater than item in front', self._item, self._list[self._position])
             
-          elif self.compare_item() == -1:
+          elif self.compare_item() == 1:
             print('item held is less than item in front', self._item, self._list[self._position])
             self.swap_item()
             while self.can_move_left():
               self.move_left()
-              if self.compare_item() == -1:
+              if self.compare_item() == 1:
                 print('item held is less than item in front', self._item, self._list[self._position])
                 self.swap_item()
         
