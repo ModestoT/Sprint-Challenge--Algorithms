@@ -99,23 +99,43 @@ class SortingRobot:
         """
         # Fill this out
         while self.can_move_right():
-          print('inside while lopp', self._position)
-          self.swap_item()
-          self.move_right()
-          if self.compare_item() == None:
-            self.swap_item
-            print('swaped none item', self._item, self._list[self._position])
-          elif self.compare_item() == -1:
-            print('item held is greater than item in front', self._item, self._list[self._position])
-            
-          elif self.compare_item() == 1:
-            print('item held is less than item in front', self._item, self._list[self._position])
             self.swap_item()
-            while self.can_move_left():
-              self.move_left()
-              if self.compare_item() == 1:
-                print('item held is less than item in front', self._item, self._list[self._position])
+            self.move_right()
+            # print('inside while lopp', self._position, self._item)
+            if self.compare_item() == None:
+                self.swap_item
+                # print('swaped none item', self._item, self._list[self._position])
+            # elif self.compare_item() == -1:
+            #     print('item held is greater than item in front', self._item, self._list[self._position])
+                
+            elif self.compare_item() == 1:
+                # print('item held is less than item in front', self._item, self._list[self._position])
                 self.swap_item()
+                while self.can_move_left():
+                    self.move_left()
+                    if self.compare_item() == 1:
+                        # print('item held is less than item in front', self._item, self._list[self._position])
+                        self.swap_item()
+
+        
+        while self.can_move_left():
+            # print('inside second while', self._position, self._item)
+            if self.compare_item() == -1:
+                self.move_left()
+                # print('moving left')
+            elif self.compare_item() == 1:
+                # print('this is smaller', self._item, self._list[self._position], self._position)
+                self.swap_item()
+                self.move_left()
+                # print('moving left with swap')
+            elif self.compare_item() == 0:
+                self.swap_item()
+                self.move_left()
+            else:
+                self.swap_item()
+                
+                break
+       
         
         
 
