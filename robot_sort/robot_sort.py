@@ -133,7 +133,7 @@ class SortingRobot:
                 self.move_left()
             else:
                 self.swap_item()
-                if self.compare_item() == None :
+                if self.compare_item() == None and self.can_move_right() is not True:
                     # print('breaking from second while', self._position, self._item, self._list[self._position])
                     self.swap_item()
                 break
