@@ -30,3 +30,15 @@ c)  def bunnyEars(bunnies):
     answer O(n)
 
 ## Exercise 2
+
+
+def CheckBreakingPoint(nStories, eggs):
+  for story in nStories:     
+    drop egg from story starting from first story
+    check if egg breaks or not
+    if it does break return that story
+    else
+    go to the next story 
+    then check if an egg breaks at this story
+
+time complexity of this possible solution would be an O(n) since it is dependent on however many stories the build has
